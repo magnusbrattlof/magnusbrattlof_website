@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Examples - PyCur</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../static/docs/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../static/docs/css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../static/docs/css/highlight.css">
+
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Examples";
+    var mkdocs_page_input_path = "../static/docs/examples.md";
+    var mkdocs_page_url = "/docs/examples/";
+  </script>
+
+  <script src="../static/docs/js/jquery-2.1.1.min.js"></script>
+  <script src="../static/docs/js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../static/docs/js/highlight.pack.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="/docs" class="icon icon-home"> PyCur</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="/docs/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+
+
+            <li class="toctree-l1">
+
+    <a class="" href="/docs">Getting started</a>
+	    </li>
+
+            <li class="toctree-l1 current">
+
+    <a class="current" href="/docs/examples">Examples</a>
+    <ul class="subnav">
+
+    <li class="toctree-l2"><a href="#examples">Examples</a></li>
+
+        <ul>
+
+            <li><a class="toctree-l3" href="#fetching-the-latest-prices">Fetching the latest prices</a></li>
+
+            <li><a class="toctree-l3" href="#filter-countries">Filter countries</a></li>
+
+            <li><a class="toctree-l3" href="#iterate-through-a-list-of-countries">Iterate through a list of countries</a></li>
+
+            <li><a class="toctree-l3" href="#access-historical-data">Access historical data</a></li>
+
+            <li><a class="toctree-l3" href="#supported-countries">Supported countries</a></li>
+
+        </ul>
+
+
+    </ul>
+	    </li>
+
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">PyCur</a>
+      </nav>
+
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="/docs">Docs</a> &raquo;</li>
+
+
+
+    <li>Examples</li>
+    <li class="wy-breadcrumbs-aside">
+
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+
+                <h1 id="examples">Examples</h1>
+<p>The following section shows some simple examples.</p>
+<h3 id="fetching-the-latest-prices">Fetching the latest prices</h3>
+<p>After you successfully installed the library you can now start to play around with it.</p>
+<pre><code class="python">&gt;&gt;&gt; from Pycurrency import Pycur
+&gt;&gt;&gt;
+&gt;&gt;&gt; cur = Pycur('USD')
+&gt;&gt;&gt;
+&gt;&gt;&gt; cur.get_currency()
+{'INR': 65.01, 'BGN': 1.6549, 'GBP': 0.75836, 'ZAR': 13.684, 'ILS': 3.4876, 'EUR': 0.84617, 'SGD': 1.3584, 'SEK': 8.1609, 'JPY': 113.17, 'KRW': 1130.6, 'MXN': 18.893, 'CNY': 6.6185, 'RUB': 57.428, 'MYR': 4.225, 'DKK': 6.2987, 'PLN': 3.5846, 'CZK': 21.738, 'THB': 33.16, 'CHF': 0.9813, 'BRL': 3.1747, 'NZD': 1.4288, 'IDR': 13510.0, 'PHP': 51.502, 'HUF': 260.73, 'AUD': 1.2739, 'HKD': 7.803, 'NOK': 7.9662, 'HRK': 6.3518, 'CAD': 1.2494, 'RON': 3.8899, 'TRY': 3.663}
+</code></pre>
+
+<p>The function <code>get_currency()</code> will return an ordinary Python dict where you can access the value by your country key.</p>
+<h3 id="filter-countries">Filter countries</h3>
+<pre><code class="python">&gt;&gt;&gt; sek = cur.get_currency()['SEK']
+&gt;&gt;&gt; sek
+8.1609
+</code></pre>
+
+<p>So here we can se that for $1 you'll need to pay 8.1609 Swedish kronor.</p>
+<h3 id="iterate-through-a-list-of-countries">Iterate through a list of countries</h3>
+<pre><code class="python">&gt;&gt;&gt; c_list = ['SEK', 'NOK', 'DKK']
+&gt;&gt;&gt; for c in c_list:
+...     cur.get_currency()[c]
+...
+8.1609
+7.9662
+6.2987
+</code></pre>
+
+<h3 id="access-historical-data">Access historical data</h3>
+<p>The method <code>get_historical()</code> requires one argument and it should be formatted <code>yyy-mm-dd</code>.</p>
+<pre><code class="python">&gt;&gt;&gt; cur = Pycur('EUR')
+&gt;&gt;&gt; cur.get_historical('2001-08-09')
+{'ROL': 26380.0, 'ZAR': 7.3259, 'SKK': 42.815, 'CZK': 33.85, 'SGD': 1.5721, 'EEK': 15.647, 'TRL': 1221000.0, 'USD': 0.8853, 'HKD': 6.9049, 'CHF': 1.5057, 'PLN': 3.7345, 'ISK': 86.95, 'CYP': 0.57362, 'SIT': 219.42, 'HUF': 246.5, 'CAD': 1.3584, 'BGN': 1.947, 'NOK': 7.985, 'KRW': 1137.6, 'AUD': 1.7135, 'DKK': 7.4422, 'SEK': 9.1734, 'JPY': 109.16, 'NZD': 2.0836, 'LTL': 3.541, 'LVL': 0.5598, 'GBP': 0.6234, 'MTL': 0.4021}
+&gt;&gt;&gt;
+</code></pre>
+
+<p>If you only want one country, you can filter with your country key as we saw in the previous examples.</p>
+<pre><code class="python">&gt;&gt;&gt; hist = cur.get_historical('2001-08-09')
+&gt;&gt;&gt; hist['SEK']
+9.1734
+&gt;&gt;&gt;
+</code></pre>
+
+<h3 id="supported-countries">Supported countries</h3>
+<p>The following countries are supported by Pycurrency. For more information see <a href="http://fixer.io">fixer.io</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Country</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AUD</td>
+<td>Australia</td>
+</tr>
+<tr>
+<td>BGN</td>
+<td>Bulgaria</td>
+</tr>
+<tr>
+<td>BRL</td>
+<td>Brazil</td>
+</tr>
+<tr>
+<td>CAD</td>
+<td>Canada</td>
+</tr>
+<tr>
+<td>CHF</td>
+<td>Liechtenstein</td>
+</tr>
+<tr>
+<td>CNY</td>
+<td>China</td>
+</tr>
+<tr>
+<td>CZK</td>
+<td>Czech Republic</td>
+</tr>
+<tr>
+<td>DKK</td>
+<td>Denmark</td>
+</tr>
+<tr>
+<td>GBP</td>
+<td>South Georgia Island (UK)</td>
+</tr>
+<tr>
+<td>HKD</td>
+<td>Hong Kong</td>
+</tr>
+<tr>
+<td>HRK</td>
+<td>Croatia</td>
+</tr>
+<tr>
+<td>HUF</td>
+<td>Hungary</td>
+</tr>
+<tr>
+<td>IDR</td>
+<td>Indonesia</td>
+</tr>
+<tr>
+<td>ILS</td>
+<td>Isle of Man (UK)</td>
+</tr>
+<tr>
+<td>INR</td>
+<td>India</td>
+</tr>
+<tr>
+<td>JPY</td>
+<td>Japan</td>
+</tr>
+<tr>
+<td>KRW</td>
+<td>South Korea</td>
+</tr>
+<tr>
+<td>MXN</td>
+<td>Mexico</td>
+</tr>
+<tr>
+<td>MYR</td>
+<td>Malaysia</td>
+</tr>
+<tr>
+<td>NOK</td>
+<td>Norway</td>
+</tr>
+<tr>
+<td>NZD</td>
+<td>New Zealand</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>Philippines</td>
+</tr>
+<tr>
+<td>PLN</td>
+<td>Poland</td>
+</tr>
+<tr>
+<td>RON</td>
+<td>Romania</td>
+</tr>
+<tr>
+<td>RUB</td>
+<td>Russia</td>
+</tr>
+<tr>
+<td>SEK</td>
+<td>Sweden</td>
+</tr>
+<tr>
+<td>SGD</td>
+<td>Singapore</td>
+</tr>
+<tr>
+<td>THB</td>
+<td>Thailand</td>
+</tr>
+<tr>
+<td>TRY</td>
+<td>Turkey</td>
+</tr>
+<tr>
+<td>USD</td>
+<td>United States Of America</td>
+</tr>
+<tr>
+<td>ZAR</td>
+<td>South Africa</td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+          </div>
+          <footer>
+
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+
+
+        <a href="/docs" class="btn btn-neutral" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+
+    </div>
+
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+
+
+        <span><a href="/docs" style="color: #fcfcfc;">&laquo; Previous</a></span>
+
+
+    </span>
+</div>
+    <script>var base_url = '/docs';</script>
+    <script src="../static/docs/js/theme.js"></script>
+      <script src="../static/docs/search/require.js"></script>
+      <script src="../static/docs/search/search.js"></script>
+
+</body>
+</html>

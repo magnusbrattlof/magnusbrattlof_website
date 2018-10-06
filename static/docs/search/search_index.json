@@ -1,0 +1,59 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to Pycurrency's documentation\n\n\nThis is a micro Python library that enable users to fetch a veraity of world currencies in a secure and easy manner using \nHTTPS\n and \nJSON\n.\nThe library uses the \nForeign exchange rates and currency conversion API\n.\n\n\nGetting up and running\n\n\nAs always the first procedure is to install the library, this is done via pip.\n\n\n$ pip install Pycurrency\n\n\n\n\nFeatures\n\n\n\n\nAccess world currency rates from more than 30 countries\n\n\nQuote currency rates with multi-bases, e.g., USD, EUR\n\n\nCompare and evaluate currencies against each other\n\n\nAccess historical currency data since 1999",
+            "title": "Getting started"
+        },
+        {
+            "location": "/#welcome-to-pycurrencys-documentation",
+            "text": "This is a micro Python library that enable users to fetch a veraity of world currencies in a secure and easy manner using  HTTPS  and  JSON .\nThe library uses the  Foreign exchange rates and currency conversion API .",
+            "title": "Welcome to Pycurrency's documentation"
+        },
+        {
+            "location": "/#getting-up-and-running",
+            "text": "As always the first procedure is to install the library, this is done via pip.  $ pip install Pycurrency",
+            "title": "Getting up and running"
+        },
+        {
+            "location": "/#features",
+            "text": "Access world currency rates from more than 30 countries  Quote currency rates with multi-bases, e.g., USD, EUR  Compare and evaluate currencies against each other  Access historical currency data since 1999",
+            "title": "Features"
+        },
+        {
+            "location": "/examples/",
+            "text": "Examples\n\n\nThe following section shows some simple examples.\n\n\nFetching the latest prices\n\n\nAfter you successfully installed the library you can now start to play around with it.\n\n\n>>> from Pycurrency import Pycur\n>>>\n>>> cur = Pycur('USD')\n>>>\n>>> cur.get_currency()\n{'INR': 65.01, 'BGN': 1.6549, 'GBP': 0.75836, 'ZAR': 13.684, 'ILS': 3.4876, 'EUR': 0.84617, 'SGD': 1.3584, 'SEK': 8.1609, 'JPY': 113.17, 'KRW': 1130.6, 'MXN': 18.893, 'CNY': 6.6185, 'RUB': 57.428, 'MYR': 4.225, 'DKK': 6.2987, 'PLN': 3.5846, 'CZK': 21.738, 'THB': 33.16, 'CHF': 0.9813, 'BRL': 3.1747, 'NZD': 1.4288, 'IDR': 13510.0, 'PHP': 51.502, 'HUF': 260.73, 'AUD': 1.2739, 'HKD': 7.803, 'NOK': 7.9662, 'HRK': 6.3518, 'CAD': 1.2494, 'RON': 3.8899, 'TRY': 3.663}\n\n\n\n\nThe function \nget_currency()\n will return an ordinary Python dict where you can access the value by your country key.\n\n\nFilter countries\n\n\n>>> sek = cur.get_currency()['SEK']\n>>> sek\n8.1609\n\n\n\n\nSo here we can se that for $1 you'll need to pay 8.1609 Swedish kronor.\n\n\nIterate through a list of countries\n\n\n>>> c_list = ['SEK', 'NOK', 'DKK']\n>>> for c in c_list:\n...     cur.get_currency()[c]\n...\n8.1609\n7.9662\n6.2987\n\n\n\n\nAccess historical data\n\n\nThe method \nget_historical()\n requires one argument and it should be formatted \nyyy-mm-dd\n.\n\n\n>>> cur = Pycur('EUR')\n>>> cur.get_historical('2001-08-09')\n{'ROL': 26380.0, 'ZAR': 7.3259, 'SKK': 42.815, 'CZK': 33.85, 'SGD': 1.5721, 'EEK': 15.647, 'TRL': 1221000.0, 'USD': 0.8853, 'HKD': 6.9049, 'CHF': 1.5057, 'PLN': 3.7345, 'ISK': 86.95, 'CYP': 0.57362, 'SIT': 219.42, 'HUF': 246.5, 'CAD': 1.3584, 'BGN': 1.947, 'NOK': 7.985, 'KRW': 1137.6, 'AUD': 1.7135, 'DKK': 7.4422, 'SEK': 9.1734, 'JPY': 109.16, 'NZD': 2.0836, 'LTL': 3.541, 'LVL': 0.5598, 'GBP': 0.6234, 'MTL': 0.4021}\n>>>\n\n\n\n\nIf you only want one country, you can filter with your country key as we saw in the previous examples.\n\n\n>>> hist = cur.get_historical('2001-08-09')\n>>> hist['SEK']\n9.1734\n>>>\n\n\n\n\nSupported countries\n\n\nThe following countries are supported by Pycurrency. For more information see \nfixer.io\n.\n\n\n\n\n\n\n\n\nKey\n\n\nCountry\n\n\n\n\n\n\n\n\n\n\nAUD\n\n\nAustralia\n\n\n\n\n\n\nBGN\n\n\nBulgaria\n\n\n\n\n\n\nBRL\n\n\nBrazil\n\n\n\n\n\n\nCAD\n\n\nCanada\n\n\n\n\n\n\nCHF\n\n\nLiechtenstein\n\n\n\n\n\n\nCNY\n\n\nChina\n\n\n\n\n\n\nCZK\n\n\nCzech Republic\n\n\n\n\n\n\nDKK\n\n\nDenmark\n\n\n\n\n\n\nGBP\n\n\nSouth Georgia Island (UK)\n\n\n\n\n\n\nHKD\n\n\nHong Kong\n\n\n\n\n\n\nHRK\n\n\nCroatia\n\n\n\n\n\n\nHUF\n\n\nHungary\n\n\n\n\n\n\nIDR\n\n\nIndonesia\n\n\n\n\n\n\nILS\n\n\nIsle of Man (UK)\n\n\n\n\n\n\nINR\n\n\nIndia\n\n\n\n\n\n\nJPY\n\n\nJapan\n\n\n\n\n\n\nKRW\n\n\nSouth Korea\n\n\n\n\n\n\nMXN\n\n\nMexico\n\n\n\n\n\n\nMYR\n\n\nMalaysia\n\n\n\n\n\n\nNOK\n\n\nNorway\n\n\n\n\n\n\nNZD\n\n\nNew Zealand\n\n\n\n\n\n\nPHP\n\n\nPhilippines\n\n\n\n\n\n\nPLN\n\n\nPoland\n\n\n\n\n\n\nRON\n\n\nRomania\n\n\n\n\n\n\nRUB\n\n\nRussia\n\n\n\n\n\n\nSEK\n\n\nSweden\n\n\n\n\n\n\nSGD\n\n\nSingapore\n\n\n\n\n\n\nTHB\n\n\nThailand\n\n\n\n\n\n\nTRY\n\n\nTurkey\n\n\n\n\n\n\nUSD\n\n\nUnited States Of America\n\n\n\n\n\n\nZAR\n\n\nSouth Africa",
+            "title": "Examples"
+        },
+        {
+            "location": "/examples/#examples",
+            "text": "The following section shows some simple examples.",
+            "title": "Examples"
+        },
+        {
+            "location": "/examples/#fetching-the-latest-prices",
+            "text": "After you successfully installed the library you can now start to play around with it.  >>> from Pycurrency import Pycur\n>>>\n>>> cur = Pycur('USD')\n>>>\n>>> cur.get_currency()\n{'INR': 65.01, 'BGN': 1.6549, 'GBP': 0.75836, 'ZAR': 13.684, 'ILS': 3.4876, 'EUR': 0.84617, 'SGD': 1.3584, 'SEK': 8.1609, 'JPY': 113.17, 'KRW': 1130.6, 'MXN': 18.893, 'CNY': 6.6185, 'RUB': 57.428, 'MYR': 4.225, 'DKK': 6.2987, 'PLN': 3.5846, 'CZK': 21.738, 'THB': 33.16, 'CHF': 0.9813, 'BRL': 3.1747, 'NZD': 1.4288, 'IDR': 13510.0, 'PHP': 51.502, 'HUF': 260.73, 'AUD': 1.2739, 'HKD': 7.803, 'NOK': 7.9662, 'HRK': 6.3518, 'CAD': 1.2494, 'RON': 3.8899, 'TRY': 3.663}  The function  get_currency()  will return an ordinary Python dict where you can access the value by your country key.",
+            "title": "Fetching the latest prices"
+        },
+        {
+            "location": "/examples/#filter-countries",
+            "text": ">>> sek = cur.get_currency()['SEK']\n>>> sek\n8.1609  So here we can se that for $1 you'll need to pay 8.1609 Swedish kronor.",
+            "title": "Filter countries"
+        },
+        {
+            "location": "/examples/#iterate-through-a-list-of-countries",
+            "text": ">>> c_list = ['SEK', 'NOK', 'DKK']\n>>> for c in c_list:\n...     cur.get_currency()[c]\n...\n8.1609\n7.9662\n6.2987",
+            "title": "Iterate through a list of countries"
+        },
+        {
+            "location": "/examples/#access-historical-data",
+            "text": "The method  get_historical()  requires one argument and it should be formatted  yyy-mm-dd .  >>> cur = Pycur('EUR')\n>>> cur.get_historical('2001-08-09')\n{'ROL': 26380.0, 'ZAR': 7.3259, 'SKK': 42.815, 'CZK': 33.85, 'SGD': 1.5721, 'EEK': 15.647, 'TRL': 1221000.0, 'USD': 0.8853, 'HKD': 6.9049, 'CHF': 1.5057, 'PLN': 3.7345, 'ISK': 86.95, 'CYP': 0.57362, 'SIT': 219.42, 'HUF': 246.5, 'CAD': 1.3584, 'BGN': 1.947, 'NOK': 7.985, 'KRW': 1137.6, 'AUD': 1.7135, 'DKK': 7.4422, 'SEK': 9.1734, 'JPY': 109.16, 'NZD': 2.0836, 'LTL': 3.541, 'LVL': 0.5598, 'GBP': 0.6234, 'MTL': 0.4021}\n>>>  If you only want one country, you can filter with your country key as we saw in the previous examples.  >>> hist = cur.get_historical('2001-08-09')\n>>> hist['SEK']\n9.1734\n>>>",
+            "title": "Access historical data"
+        },
+        {
+            "location": "/examples/#supported-countries",
+            "text": "The following countries are supported by Pycurrency. For more information see  fixer.io .     Key  Country      AUD  Australia    BGN  Bulgaria    BRL  Brazil    CAD  Canada    CHF  Liechtenstein    CNY  China    CZK  Czech Republic    DKK  Denmark    GBP  South Georgia Island (UK)    HKD  Hong Kong    HRK  Croatia    HUF  Hungary    IDR  Indonesia    ILS  Isle of Man (UK)    INR  India    JPY  Japan    KRW  South Korea    MXN  Mexico    MYR  Malaysia    NOK  Norway    NZD  New Zealand    PHP  Philippines    PLN  Poland    RON  Romania    RUB  Russia    SEK  Sweden    SGD  Singapore    THB  Thailand    TRY  Turkey    USD  United States Of America    ZAR  South Africa",
+            "title": "Supported countries"
+        }
+    ]
+}

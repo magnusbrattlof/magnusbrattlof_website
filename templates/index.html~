@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to magnusbrattlof.org</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Draco is free PSD &amp; HTML template by @flamekaizar">
+    <meta name="author" content="Afnizar Nur Ghifari">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel"stylesheet" href"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/kube.min.css" />
+    <link rel="stylesheet" href="static/css/custom.min.css" />
+    <link rel="stylesheet" href"static/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="img/favicon.png" />
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+	<!-- Navigation -->
+	<div class="main-nav">
+		<div class="container">
+			<header class="group top-nav">
+				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
+				    <span class="logo">Menu</span>
+				</div>
+			    <nav id="navbar-1" class="navbar item-nav">
+				    <ul>
+				        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="#education">Education</a></li>
+				        <li><a href="#experiences">Experiences</a></li>
+				        <li><a href="#skills">Skills</a></li>
+				        <li><a href="#projects">Projects</a></li>
+				    </ul>
+				</nav>
+			</header>
+		</div>
+	</div>
+
+	<!-- Introduction -->
+	<div class="intro section" id="about">
+		<div class="container">
+			<div class="units-row units-split wrap">
+				<div class="unit-20">
+					<img src="static/media/mbrattlof.jpg" alt="Avatar">
+				</div>
+				<div class="unit-80">
+					<h1>Magnus Brattlöf<br><span id="typed"></span></h1>
+                    <p>IP: {{ ip }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="work section second" id="education">
+		<div class="container">
+			<h1>Education</h1>
+			<ul class="work-list">
+				<li>2018 - 2020</li>
+				<li><a href="https://www.chalmers.se/en/departments/cse/Pages/default.aspx" target="_blank">Chalmers University of Technology - Computer Science</a></li>
+				<li>
+                    Master of Science.
+                </li>
+			</ul>
+            <ul class="work-list">
+                <li>2014 - 2018</li>
+                <li><a href="https://hv.se/en" target="_blank">University West - Computer Engineering</a></li>
+                <li>
+                    Bachelor of Science.
+                </li>
+            </ul>
+		</div>
+	</div>
+
+	<!-- Work Experience -->
+	<div class="work section second" id="experiences">
+		<div class="container">
+			<h1>Work<br>Experience</h1>
+			<ul class="work-list">
+				<li>2017</li>
+				<li><a href="http://volvocars.com/us" target="_blank">Volvo Cars Corporation - Summer employment</a></li>
+				<li>
+                    Summer employment at Volvo where I developed auto-test cases for
+                    VIDA, which is an application used for parts information, service
+                    information, diagnostic fault tracing and software download for
+                    Volvo cars. The tests we developed were executed with the help
+                    of Jenkins and Git. During my time at Volvo I was given the
+                    opportunity to practice SCRUM in a real world scenario.
+                </li>
+			</ul>
+			<ul class="work-list">
+				<li>2016</li>
+				<li><a href="http://bearcom.se" target="_blank">Bearcom AB - Summer employment</a></li>
+				<li>
+                    Summer employment as an IT/Network technician.
+                    Mainly installation, configuration and troubleshooting of access-switches.
+                    Configuration and updating customers firewalls.
+                    Help-desk and support cases with multiple customers.
+                    Also documentation and sometimes a minor planning of customers and internal networks.
+                </li>
+			</ul>
+			<ul class="work-list">
+				<li>2015</li>
+				<li><a href="http://bearcom.se" target="_blank">Bearcom AB - Summer employment</a></li>
+				<li>
+                    Summer employment as an IT/Network technician.
+                    Mainly installation, configuration and troubleshooting of access-switches.
+                    Configuration and updating customers firewalls.
+                    Help-desk and support cases with multiple customers.
+                    Also, documentation and sometimes a minor planning of customers and internal networks.
+                </li>
+			</ul>
+		</div>
+	</div>
+	<!-- Technical Skills -->
+	<div class="skills section second" id="skills">
+		<div class="container">
+			<h1>Skills</h1>
+			<ul class="skill-list list-flat">
+				<li>Software Engineering</li>
+				<li>Python / C/C++ / Bash / Git / JSON / Jenkins</li>
+			</ul>
+			<ul class="skill-list list-flat">
+				<li>Computer Engineering</li>
+				<li>Virtualization / VMware / Hyper-V / Centos / GNU/Linux</li>
+			</ul>
+			<ul class="skill-list list-flat">
+				<li>Network Engineering</li>
+				<li>TCP/IP / Routing Technology / L2 Technology / Cisco IOS / HP Comware</li>
+				<li>Network Security</li>
+			</ul>
+            <ul class="skill-list list-flat">
+                <li>Project Management</li>
+                <li>SCRUM</li>
+            </ul>
+            <ul class="skill-list list-flat">
+                <li>Skills in progress</li>
+                <li>Java / Golang / Algorithms / Machine Learning / High Frequecy Trading</li>
+            </ul>
+		</div>
+
+        <div class="skills section second" id="projects">
+            <div class="container">
+                <h1>Publications &<br>Projects</h1>
+                <ul class="skill-list list-flat">
+			        <li>Bachelor thesis in Computer Engineering</li>
+                    <a href="http://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1144045&dswid=7370" target="_blank">Distributed Checkpointing with Docker Containers in High Performance Computing</a>
+                </ul>
+            </div>
+	   </div>
+
+	<footer>
+		<div class="container">
+			<div class="units-row">
+			    <div class="unit-50">
+			    	<h6>Handcrafted by Afnizar Nur Ghifari</h6>
+			    </div>
+			    <div class="unit-50">
+					<ul class="social list-flat right">
+						<li><a href="mailto:afnizarhilmi@gmail.com"><i class="fa fa-send"></i></a></li>
+						<li><a href="http://twitter.com/flamekaizar"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="http://dribbble.com/flamekaizar"><i class="fa fa-dribbble"></i></a></li>
+						<li><a href="http://behance.com/flamekaizar"><i class="fa fa-behance"></i></a></li>
+					</ul>
+			    </div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Javascript -->
+	      <script src="static/js/jquery.min.js"></script>
+	      <script src= "static/js/typed.min.js"></script>
+        <script src="static/js/kube.min.js"></script>
+        <script src="static/js/site.js"></script>
+        <script>
+		function newTyped(){}$(function(){$("#typed").typed({
+		strings: ["Python", "Chalmers", "Bash", "SCRUM", "C/C++", "TCP/IP", "Volvo Cars", "GNU/Linux", "Centos", "Virtualization", "University", "Bearcom AB"],
+
+		typeSpeed:50,backDelay:1500,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
+    </script>
+</body>
+</html>
