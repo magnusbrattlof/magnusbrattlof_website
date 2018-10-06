@@ -1,6 +1,0 @@
-site_name: PyCur
-pages:
-- Getting started: 'index.md'
-- Examples: 'examples.md'
-
-theme: readthedocs
